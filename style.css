@@ -256,6 +256,7 @@ footer #text {
   }
   header {
     padding: 30px;
+    background-image: url(images/bg-hero-desktop.svg);
   }
   .nav-bar>.img{
     width: 20%;
@@ -367,6 +368,7 @@ footer #text {
   }
   header {
     padding: 30px;
+    background-image: url(images/bg-hero-desktop.svg);
   }
   .nav-bar>.img{
     width: 20%;
