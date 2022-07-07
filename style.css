@@ -177,14 +177,15 @@ footer {
 .footer-info .img{
   width: 5%;
 }
+.logo {
+  width: 100%;
+}
 .logo img {
   filter: invert(100%) saturate(0%) brightness(200%);
+  width: 40%;
 }
 .logo, .location, .contact{
   margin-bottom: 30px;
-}
-.logo {
-  width: 60%;
 }
 .location, .contact, .email {
   display: flex;
@@ -243,6 +244,115 @@ footer #text {
 .footer-socials img:hover {
   filter: opacity(0.5) drop-shadow(0 0 0 hsl(322, 100%, 66%))}
 
+  /* animation */
+@keyframes box1 {
+  50% {top: 85%; left: 0;}
+  100% {top: 85%; left: 85%;}
+}
+@keyframes box2 {
+  50% {bottom: 85%; right: 0;}
+  100% {bottom: 85%; right: 85%;}
+}
+@keyframes box3 {
+  100% {transform: rotate(180deg);}
+  }
+@keyframes border1 {
+  0% {opacity: 1; box-shadow: -1px -1px 1px 0px rgba(100,100,100,1);}
+  10% {opacity: 0;}
+  50% {opacity: 0;}
+  90% {opacity: 0;}
+  100% {opacity: 1; box-shadow: -1px -1px 1px 0px rgba(100,100,100,1);}
+}
+@keyframes border2 {
+  0% {opacity: 1; box-shadow: 1px 1px 1px 0px rgba(100,100,100,1);}
+  10% {opacity: 0;}
+  50% {opacity: 0;}
+  90% {opacity: 0;}
+  100% {opacity: 1; box-shadow: 1px 1px 1px 0px rgba(100,100,100,1);}
+}
+.animation-box {
+  position: relative;
+  width: 100%;
+}
+.animation {
+  position: relative;
+  width: 15%;
+  margin: auto;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: anim-box;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.border {
+  position: absolute;
+  width: 5%;
+  margin: auto;
+  aspect-ratio: 1;
+  z-index: 100;
+}
+.border1 {
+  left: 42.5%;
+  border-top: 1px groove rgba(255,0,0);
+  border-left: 1px groove rgba(255,0,0);
+  animation-name: border1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+.border2 {
+  left: 52.5%;
+  bottom: 0;
+  border-right: 1px groove rgba(50,50,50);
+  border-bottom: 1px groove rgba(50,50,50);
+  animation-name: border2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+.box {
+  width: 15%;
+  aspect-ratio: 1;
+}  
+.box1 {
+  background: #f00;
+  order: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: box1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.box2 {
+  background: #333;
+  order: 3;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation-name: box2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.box3 {
+  background: #ddd;
+  order: 2;
+  animation-name: box3;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
 
 /* desktop orientaion */
 @media screen and (min-width: 1004px) {
@@ -339,6 +449,9 @@ footer #text {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.logo img {
+  width: 20%;
 }
 .footer-info, .footer-nav, .footer-socials {
   margin: 0;
@@ -477,9 +590,9 @@ footer #text {
   .logo, .location, .contact{
     margin-bottom: 30px;
   }
-  .logo {
+  /* .logo {
     width: 40%;
-  }
+  } */
   .footer-info .img{
     width: 4%;
   }
